@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Sirve archivos y carpetas existentes sin reescribir.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Atajo opcional para assets desde la raiz.
+    RewriteRule ^assets/(.*)$ frontend/assets/$1 [L,NC]
+
+    # Raiz del proyecto -> front controller.
+    RewriteRule ^$ frontend/index.php [L,QSA]
+
+    # Rutas limpias opcionales: /dashboard, /envios.index, etc.
+    RewriteRule ^([A-Za-z0-9._-]+)$ frontend/index.php?route=$1 [L,QSA]
+</IfModule>
