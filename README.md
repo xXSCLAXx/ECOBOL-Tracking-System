@@ -78,9 +78,9 @@ Incluye llaves foraneas, indices y restricciones para mantener la integridad.
 ## Credenciales de prueba
 
 - Administrador: `admin@ecobol.bo`
-- Contraseña: `123456`
 - Empleado: `empleado@ecobol.bo`
-- Contraseña: `123456`
+
+> Las contraseñas de estas cuentas no se publican en el README.
 
 ## Estructura principal
 
